@@ -1,4 +1,5 @@
 # angular2-signaturepad
+Modified fork to allow for background image and watermark to be applied to the signature image
 Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
 
 ## Install
