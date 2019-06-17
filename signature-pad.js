@@ -24,7 +24,7 @@ var SignaturePad = (function () {
             var background = new Image();
             background.src = this.options['backgroundImage'];
             // Make sure the image is loaded first otherwise nothing will draw.
-            background.onload = () => {
+            background.onload = function () {
                 var context = canvas.getContext("2d");
                 context.drawImage(background, 0, 0);
                 if (this.watermark) {
@@ -95,7 +95,7 @@ var SignaturePad = (function () {
                 var background = new Image();
                 background.src = this.options['backgroundImage'];
                 // Make sure the image is loaded first otherwise nothing will draw.
-                background.onload = () => {
+                background.onload = function() {
                     var context = this.signaturePad._canvas.getContext("2d");
                     context.drawImage(background, 0, 0);
                     if (this.watermark) {
