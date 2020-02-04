@@ -7,6 +7,7 @@ export interface Point {
 export declare type PointGroup = Array<Point>;
 export declare class SignaturePad {
     options: Object;
+    ratio: number;
     onBeginEvent: EventEmitter<boolean>;
     onEndEvent: EventEmitter<boolean>;
     private signaturePad;
