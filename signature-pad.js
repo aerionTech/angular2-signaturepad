@@ -6,6 +6,7 @@ var SignaturePad = (function () {
         // no op
         this.elementRef = elementRef;
         this.options = this.options || {};
+        this.ratio = this.ratio || 1.0;
         this.watermark = this.options['watermark'] || null;
         this.onBeginEvent = new core_1.EventEmitter();
         this.onEndEvent = new core_1.EventEmitter();
@@ -15,10 +16,10 @@ var SignaturePad = (function () {
         this.watermark = this.options['watermark'] || null;
         var canvas = this.elementRef.nativeElement.querySelector('canvas');
         if (this.options['canvasHeight']) {
-            canvas.height = this.options['canvasHeight'];
+            canvas.height = this.options['canvasHeight'] * this.ratio;
         }
         if (this.options['canvasWidth']) {
-            canvas.width = this.options['canvasWidth'];
+            canvas.width = this.options['canvasWidth'] * this.ratio;
         }
         if (this.options['backgroundImage']) {
             var background = new Image();
@@ -130,6 +131,7 @@ var SignaturePad = (function () {
     ];
     SignaturePad.propDecorators = {
         'options': [{ type: core_1.Input },],
+        'ratio': [{ type: core_1.Input },],
         'onBeginEvent': [{ type: core_1.Output },],
         'onEndEvent': [{ type: core_1.Output },],
     };
